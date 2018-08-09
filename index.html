@@ -14,71 +14,6 @@
 	<link rel="preload" href="bg_images/starfield.gif" as="image">
 	<link rel="preload" href="bg_images/waveform.gif" as="image">
     <link rel="stylesheet" href="style.css" type="text/css">
-
-        <style type="text/css">
-            /* Set a size for our map container, the Google Map will take up 100% of this container */
-            #map {
-                width: 100%;
-                height: 500px;                
-            }
-        </style>
-
-        <!-- 
-            You need to include this script tag on any page that has a Google Map.
-
-            The following script tag will work when opening this example locally on your computer.
-            But if you use this on a localhost server or a live website you will need to include an API key. 
-            Sign up for one here (it's free for small usage): 
-                https://developers.google.com/maps/documentation/javascript/tutorial#api_key
-
-            After you sign up, use the following script tag with YOUR_GOOGLE_API_KEY replaced with your actual key.
-                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY"></script>
-        -->
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_CwV0I4DJtlmQtiYXspHr6oSIetcCo1Y&callback=initMap" type="text/javascript"></script>
-        <script type="text/javascript">
-            // When the window has finished loading create our google map below
-            //google.maps.event.addDomListener(window, 'load', init);
-        
-            function initMap() {
-                // Basic options for a simple Google Map
-                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-                var mapOptions = {
-                    // How zoomed in you want the map to start at (always required)
-                    zoom: 16,
-
-                    // The latitude and longitude to center the map (always required)
-                    center: new google.maps.LatLng(32.227527, -110.968523), 
-
-                    // How you would like to style the map. 
-                    // This is where you would paste any style found on Snazzy Maps.
-                    styles: [{"featureType":"all","elementType":"geometry","stylers":[{"color":"#da38d4"}]},{"featureType":"all","elementType":"labels.text.fill","stylers":[{"gamma":0.01},{"lightness":20}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"saturation":-31},{"lightness":-33},{"weight":2},{"gamma":0.8}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"lightness":30},{"saturation":30}]},{"featureType":"poi","elementType":"geometry","stylers":[{"saturation":20}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"lightness":20},{"saturation":-20}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":10},{"saturation":-30}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#c5ff31"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"saturation":25},{"lightness":25},{"color":"#dbf413"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#c8ef36"}]},{"featureType":"road.arterial","elementType":"labels.text.fill","stylers":[{"color":"#980d96"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"#b8ebfb"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"color":"#00517a"},{"weight":"1.99"}]},{"featureType":"transit.line","elementType":"geometry.fill","stylers":[{"color":"#0049e5"}]},{"featureType":"water","elementType":"all","stylers":[{"lightness":-20}]}]
-                    //styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"color":"#000000"},{"lightness":13}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#144b53"},{"lightness":14},{"weight":1.4}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#08304b"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#0c4152"},{"lightness":5}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#09ffc3"},{"lightness":25}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#ff09d8"},{"lightness":16}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"}]},{"featureType":"transit","elementType":"all","stylers":[{"color":"#146474"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#021019"}]}]
-                                    };
-
-                // Get the HTML DOM element that will contain your map 
-                // We are using a div with id="map" seen below in the <body>
-                var mapElement = document.getElementById('map');
-
-                // Create the Google Map using our element and options defined above
-                var map = new google.maps.Map(mapElement, mapOptions);
-
-                var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(32.227527, -110.968523),
-                    map: map,
-                    title: 'the royal room: 450 N 6th Ave, Tucson, AZ 85705'
-                });
-                
-                var contentString = 'the royal room: 450 N 6th Ave, Tucson, AZ 85705';
-                var infowindow = new google.maps.InfoWindow({
-                    content: contentString,
-                    maxWidth: 200
-                });
-                marker.addListener('click', function() {
-                    infowindow.open(map, marker);
-                });
-            }
-        </script>
-
 </head>
 
 <body>
@@ -140,6 +75,47 @@
 
     
     <script src="scripts.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_CwV0I4DJtlmQtiYXspHr6oSIetcCo1Y&callback=initMap" type="text/javascript"></script>
+    <script type="text/javascript">  
+        function initMap() {
+            // Basic options for a simple Google Map
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var mapOptions = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 16,
+
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(32.227527, -110.968523), 
+
+                // How you would like to style the map. 
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: [{"featureType":"all","elementType":"geometry","stylers":[{"color":"#da38d4"}]},{"featureType":"all","elementType":"labels.text.fill","stylers":[{"gamma":0.01},{"lightness":20}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"saturation":-31},{"lightness":-33},{"weight":2},{"gamma":0.8}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"lightness":30},{"saturation":30}]},{"featureType":"poi","elementType":"geometry","stylers":[{"saturation":20}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"lightness":20},{"saturation":-20}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":10},{"saturation":-30}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#c5ff31"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"saturation":25},{"lightness":25},{"color":"#dbf413"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#c8ef36"}]},{"featureType":"road.arterial","elementType":"labels.text.fill","stylers":[{"color":"#980d96"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"#b8ebfb"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"color":"#00517a"},{"weight":"1.99"}]},{"featureType":"transit.line","elementType":"geometry.fill","stylers":[{"color":"#0049e5"}]},{"featureType":"water","elementType":"all","stylers":[{"lightness":-20}]}]
+                //styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"color":"#000000"},{"lightness":13}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#144b53"},{"lightness":14},{"weight":1.4}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#08304b"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#0c4152"},{"lightness":5}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#09ffc3"},{"lightness":25}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#ff09d8"},{"lightness":16}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"}]},{"featureType":"transit","elementType":"all","stylers":[{"color":"#146474"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#021019"}]}]
+                                };
+
+            // Get the HTML DOM element that will contain your map 
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('map');
+
+            // Create the Google Map using our element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(32.227527, -110.968523),
+                map: map,
+                title: 'the royal room: 450 N 6th Ave, Tucson, AZ 85705'
+            });
+            
+            var contentString = 'the royal room: 450 N 6th Ave, Tucson, AZ 85705';
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString,
+                maxWidth: 200
+            });
+            marker.addListener('click', function() {
+                infowindow.open(map, marker);
+            });
+        }
+    </script>
 </body>
 
 </html>
