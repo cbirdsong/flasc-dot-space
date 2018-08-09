@@ -90,6 +90,16 @@ img {
 	height: auto;
 }
 
+main {
+	margin: 0 auto;
+	max-width: 800px;
+}
+
+section {
+	margin: 10vh 0;
+	padding: 2em;
+}
+
 label {
 	display: block;
 	
