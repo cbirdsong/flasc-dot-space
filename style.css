@@ -20,7 +20,7 @@ body {
 	padding: 20px 20px 100px;
 	margin: 0;
 
-	background-image: url("flasc_bg.gif");
+	background-image: url("bg_images/starfield.gif");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: black;
@@ -45,28 +45,28 @@ body {
 
 
 .bg-image-1 {
-	background-image: url("bg_images/flasc_bg.gif");
+	background-image: url("bg_images/astronaut.gif");
 }
 .bg-image-2 {
-	background-image: url("bg_images/flasc_bg2.gif");
+	background-image: url("bg_images/galaxies.gif");
 }
 .bg-image-3 {
-	background-image: url("bg_images/flasc_bg3.gif");
+	background-image: url("bg_images/jupiter.gif");
 }
 .bg-image-4 {
-	background-image: url("bg_images/flasc_bg4.gif");
+	background-image: url("bg_images/nebula.gif");
 }
 .bg-image-5 {
-	background-image: url("bg_images/flasc_bg5.gif");
+	background-image: url("bg_images/pillars.gif");
 }
 .bg-image-6 {
-	background-image: url("bg_images/flasc_bg6.gif");
+	background-image: url("bg_images/rainbow.gif");
 }
 .bg-image-7 {
-	background-image: url("bg_images/flasc_bg7.gif");
+	background-image: url("bg_images/starfield.gif");
 }
 .bg-image-8 {
-	background-image: url("bg_images/flasc_bg8.gif");
+	background-image: url("bg_images/waveform.gif");
 }
 
 h1 {
