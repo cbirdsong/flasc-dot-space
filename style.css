@@ -69,6 +69,10 @@ body {
 	background-image: url("bg_images/waveform.gif");
 }
 
+pre {
+	white-space: normal;
+}
+
 h1 {
 	font-size: 26px;
 }
