@@ -22,7 +22,7 @@ body {
 
 	background-image: url("bg_images/starfield.gif");
 	background-repeat: no-repeat;
-	background-size: auto 100%;
+	background-position: center center;
 	background-attachment: fixed;
 	background-color: black;
 	color: white;
@@ -36,10 +36,12 @@ body {
 
 
 body {
+	background-size: auto 100%;
 	font-size: 16px;
 }
 @media (min-width: 767px) { 
 	body {
+		background-size: cover;
 		font-size: 20px; 
 	}
 }
