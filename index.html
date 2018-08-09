@@ -102,12 +102,20 @@
             // Create the Google Map using our element and options defined above
             var map = new google.maps.Map(mapElement, mapOptions);
 
+            
+            var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+                var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                icon: iconBase + 'parking_lot_maps.png'
+            });
+            
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(32.227527, -110.968523),
                 map: map,
                 title: 'the royal room: 450 N 6th Ave, Tucson, AZ 85705'
             });
-            
+
             var contentString = 'the royal room: 450 N 6th Ave, Tucson, AZ 85705';
             var infowindow = new google.maps.InfoWindow({
                 content: contentString,
